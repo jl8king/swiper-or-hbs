@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>园区概况</title>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+    <link href="js/swiper-3.4.2/css/swiper-3.4.2.min.css" rel="stylesheet" />
+    <link href="css/subStyle.css" rel="stylesheet" />
+    <script></script>
+</head>
+<body>
+    <header class="info_banner">
+        <div class=" swiper-container swiper-container-horizontal">
+            <div id="banner_list" class="swiper-wrapper">
+                <a href="javascript:;" class="swiper-slide blue-slide">
+                    <img src="images/banner1.jpg" alt="图片未加载" />
+                </a>
+            </div>
+            <div class="swiper-pagination"></div><!-- 分页器 -->
+        </div>
+    </header>
+
+    <section class="info_content">
+        <hgroup id="title_ar">
+            <h2 class="tit">园区概况</h2>
+        </hgroup>
+
+        <article id="data_list">
+            <ul>
+                <!-- 循环体 -->
+                <li class="list_super">
+                    <a href="javascript:;">
+                        <div class="img_box">
+                            <img src="images/money.png" alt="图片未加载" />
+                        </div>
+                        <div class="list_content">
+                            <div class="con_tit myNowrap">园区总体规划</div>
+                            <div class="con_text">
+                                是的发送到发啥地方撒旦范德萨撒的发生的法实施地方
+                            </div>
+                            <div class="con_time">
+                                <i class="fa fa-history" aria-hidden="true"></i>
+                                <span>2017-02-05</span>
+                            </div>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </a>
+                </li>
+            </ul>
+        </article>
+    </section>
+    <div style="height: 30px;visibility: hidden"></div>
+    
+    <script src="js/jQuery_v2.1.4.js" type="text/javascript" charset="UTF-8"></script>
+    <script src="js/swiper-3.4.2/js/swiper-3.4.2.jquery.min.js" type="text/javascript" charset="UTF-8"></script>
+    <script src="js/handlebars-v4.0.5.js" type="text/javascript" charset="UTF-8"></script>
+
+    <script id="banner_hbs" type="text/x-handlebars-template">
+        {{#each banner_img}}
+            <a href="{{this.url}}" class="swiper-slide blue-slide">
+                <img src="{{this.img}}" alt="图片未加载" />
+            </a>
+        {{/each}}
+    </script>
+
+    <script id="tit_hbs" type="text/x-handlebars-template">
+        <h2 class="tit">{{tit}}</h2>
+    </script>
+
+    <script id="list_hbs" type="text/x-handlebars-template">
+        <ul>
+            {{#data_array}}
+            <li class="list_super">
+                <a href="{{url}}">
+                    <div class="img_box">
+                        <img src="{{img}}" alt="图片未加载" />
+                    </div>
+                    <div class="list_content">
+                        <div class="con_tit myNowrap">{{tit}}</div>
+                        <div class="con_text">{{content}}</div>
+                        <div class="con_time">
+                            <i class="fa fa-history" aria-hidden="true"></i>
+                            <span>{{date}}</span>
+                        </div>
+                    </div>
+                    <div style="clear: both;"></div>
+                </a>
+            </li>
+            {{/data_array}}
+        </ul>
+    </script>
+
+
+    <script type="text/javascript">
+        var banner_list = $("#banner_list");/*banner列表*/
+        var title_ar = $("#title_ar");/*标题*/
+        var data_list  = $("#data_list");/*内容*/
+
+        var banner_hbs = $("#banner_hbs");/*banner列表hbs*/
+        var tit_hbs = $("#tit_hbs");/*标题*/
+        var list_hbs = $("#list_hbs");/*内容hbs*/
+
+        /*json数据*/
+        var json = {
+            banner_img:[{
+                img:"images/banner1.jpg",
+                url:"javascript:void(0);"
+            },{
+                img:"images/banner2.jpg",
+                url:"javascript:void(0);"
+            },{
+                img:"images/banner3.jpg",
+                url:"javascript:void(0);"
+            },{
+                img:"images/banner4.gif",
+                url:"javascript:void(0);"
+            },{
+                img:"images/banner5.jpg",
+                url:"javascript:void(0);"
+            }],
+            tit:"小说列表",
+            data_array:[{
+                img:"images/money.png",
+                tit:"园区设计规划",
+                content:"是的发送到发啥地方撒旦范德萨撒的发生的法实施地方中发生的范德萨发生的发生大发生大发都是发生范德萨发的大是大非国是的发送到发啥地方撒旦范德萨撒的发生的法实施地方",
+                date:"2017-02-03",
+                url:"javascript:void(0);"
+            },{
+                img:"images/money.png",
+                tit:"水浒传",
+                content:"《水浒传》以农民起义的发生、发展过程为主线，通过各个英雄被逼上梁山的不同经历，描写出他们由个体觉醒到走上小规模联合反抗，到发展为盛大的农民起义队伍的全过程，表现了“官逼民反”这一封建时代农民起义的必然规律，塑造了农民起义领袖的群体形象，深刻反映出北宋末年的政治状况和社会矛盾",
+                date:"2017-12-02",
+                url:"javascript:void(0);"
+            },{
+                img:"images/money.png",
+                tit:"盗墓笔记",
+                content:"50年前由长沙土夫子（盗墓贼）出土的战国帛书，记载了一个奇特战国古墓的位置，50年后，其中一个土夫子的孙子在他的笔记中发现这个秘密，纠集了一批经验丰富的盗墓贼前去寻宝，谁也没有想到，这个古墓竟然有着这么多诡异的事情：七星疑棺，青眼狐尸，九头蛇柏。这神秘的墓主人到底是谁，他们到底能不能找到真正的棺椁？故事悬念重重，情节跌荡，值得一看。",
+                date:"2017-3-13",
+                url:"javascript:void(0);"
+            },{
+                img:"images/money.png",
+                tit:"凡人修仙传",
+                content:"一个普通的山村穷小子，偶然之下，进入到当地的江湖小门派，成了一名记名弟子。他以这样的身份，如何在门派中立足？又如何以平庸的资质，进入到修仙者的行列？和其他巨枭魔头，仙宗仙师并列于山海内外?",
+                date:"2017-04-29",
+                url:"javascript:void(0);"
+            },{
+                img:"images/money.png",
+                tit:"灵域",
+                content:"三万年前，自称为“神”的搏天族入侵灵域，百族奋起反抗，最终惨败，人族率先投诚，百族随后相继臣服。",
+                date:"2016-01-15",
+                url:"javascript:void(0);"
+            },{
+                img:"images/money.png",
+                tit:"从前有座灵剑山",
+                content:"修仙觅长生，",
+                date:"2017-3-13",
+                url:"javascript:void(0);"
+            }]
+        };/*数据*/
+
+        handle_html(json,banner_list, banner_hbs);/*banner图*/
+        handle_html(json,title_ar, tit_hbs);/*标题*/
+        handle_html(json,data_list, list_hbs);/*内容列表*/
+        function handle_html(json_data,html_dom,hbs_dom){
+            var html_data = Handlebars.compile(hbs_dom.html());
+            html_dom.html(html_data(json_data));
+        }
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var mySwiper = new Swiper('.swiper-container',{
+                loop: true,
+                pagination : '.swiper-pagination',
+                paginationClickable :true,
+                freeMode:false,
+                lazyLoading : true,
+                autoplay: 5000
+            });
+        });
+    </script>
+</body>
+</html>
